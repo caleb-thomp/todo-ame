@@ -87,3 +87,5 @@ app.delete("/api/todos/:id", async function (req, res) {
 app.listen(PORT, function () {
   console.log(`Server is listening on port ${PORT}`);
 });
+
+module.exports = app;

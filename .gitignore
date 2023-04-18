@@ -4,7 +4,6 @@
 # But not these files & folders
 !.gitignore
 !README.md
-!app.js
-!index.html
-!style.css
+!public/
 !server.js
+!package.json
