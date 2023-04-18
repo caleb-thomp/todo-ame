@@ -2,7 +2,7 @@ angular
   .module("todoApp", [])
   .controller("TodoController", function ($scope, $http) {
     $http
-      .get("http://localhost:3000/api/todos")
+      .get("https://ametodo.onrender.com/api/todos")
       .then(function (response) {
         $scope.todos = response.data;
       });
@@ -13,7 +13,10 @@ angular
         done: false,
       };
       $http
-        .post("http://localhost:3000/api/todos", todo)
+        .post(
+          "https://ametodo.onrender.com/api/todos",
+          todo
+        )
         .then(function (response) {
           $scope.todos.push(response.data);
           $scope.todoText = "";
@@ -27,7 +30,8 @@ angular
       };
       $http
         .put(
-          "http://localhost:3000/api/todos/" + todo._id,
+          "https://ametodo.onrender.com/api/todos/" +
+            todo._id,
           updatedTodo
         )
         .then(function (response) {
@@ -46,7 +50,8 @@ angular
     $scope.deleteTodo = function (todo) {
       $http
         .delete(
-          "http://localhost:3000/api/todos/" + todo._id
+          "https://ametodo.onrender.com/api/todos/" +
+            todo._id
         )
         .then(function (response) {
           const index = $scope.todos.indexOf(todo);
