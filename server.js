@@ -10,12 +10,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const uri = process.env.MONGOD;
+const luri =
+  "mongodb+srv://calebson:MrgoBNuYzOhucxlX@cluster0.awnhm16.mongodb.net/?retryWrites=true&w=majority";
 
 app.use(cors());
 
 // connect to MongoDB using Mongoose
 mongoose
-  .connect(uri, { useNewUrlParser: true })
+  .connect(luri, { useNewUrlParser: true })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
